@@ -96,7 +96,6 @@ db.once('open', function() {
               console.log('Remote call ---->');
               getRemoteConn(remoteSocket, serverId, function(){
                 remoteSocket.write(data);
-                remoteSocket.destroy();
               });                 
             }
             
