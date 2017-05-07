@@ -91,7 +91,7 @@ db.once('open', function() {
             //Get clients desired server
             if(process.env.SERVERID && (Number(serverId) === Number(process.env.SERVERID))){
               console.log('Local Call ---->');
-              operation.openFunction(sock, accountName);
+              operation.openFunction(sock, accountName, serverId);
             } else{
               console.log('Remote call ---->');
               getRemoteConn(remoteSocket, serverId, function(){

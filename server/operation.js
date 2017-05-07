@@ -5,7 +5,7 @@ var Account = mongoose.model('Account');
 
 var operation = {};
 
-operation.openFunction = function(clientSocket, accountName){
+operation.openFunction = function(clientSocket, accountName, serverId){
   var account = new Account({accountName:accountName, currentBalance:0, inSessionFlag:false});
   account.save(function (err, obj) {
     if (err) {
@@ -19,11 +19,11 @@ operation.openFunction = function(clientSocket, accountName){
     } else if(obj){
       console.log('Sucess!');
       // Write the data back to the socket,
-      clientSocket.write('Account has been created for "' + account.accountName + '"');
+      clientSocket.write('Sucess: Account "' + account.accountName + '" has been created on server "'+ serverId +'"');
     } else{
       console.log(err);
       // Write the data back to the socket,
-      clientSocket.write('Account ' + accountName + ' could not be created');
+      clientSocket.write('Error: Account "' + accountName + ' could not be created on server "'+ serverId +'"');
     }
   });
 };
