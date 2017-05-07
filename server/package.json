@@ -1,0 +1,16 @@
+{
+  "name": "banksystem",
+  "version": "1.0.0",
+  "description": "PA3",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "Arpit Gawande",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.9.7",
+    "shortid": "^2.2.8"
+  }
+}
