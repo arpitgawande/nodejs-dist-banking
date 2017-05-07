@@ -1,7 +1,13 @@
 'use strict';
-var CONFIG = require('./config');
 
+var CONFIG = {};
 module.exports = function(){
+  
+  if(process.env.NODE_ENV === 'production'){
+    CONFIG = require('./config-prod');
+  } else{
+    CONFIG = require('./config-test');
+  }
   //Load CONFIG
   console.log('Server argv:'+ process.argv[2]);
     if(!process.argv[2]){

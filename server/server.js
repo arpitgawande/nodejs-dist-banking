@@ -4,7 +4,13 @@ var shortid = require('shortid');
 /* Load server configurations */
 require('./init')();
 /* Get server network configuration */
-var CONFIG =require('./config');
+var CONFIG = {};
+/* Load appropriate config file */
+if(process.env.NODE_ENV === 'production'){
+  CONFIG = require('./config-prod');
+} else{
+  CONFIG = require('./config-test');
+}
 /* Data store */
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;

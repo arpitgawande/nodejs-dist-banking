@@ -12,5 +12,6 @@
   "dependencies": {
     "mongoose": "^4.9.7",
     "shortid": "^2.2.8"
-  }
+  },
+  "engines" : { "node" : "v4.2.6" }
 }

@@ -5,7 +5,13 @@ var prompt = require('prompt');
 prompt.colors = false;
 prompt.message = '';
 var net = require('net');
-var CONFIG =require('./config');
+var CONFIG = {};
+/* Load appropriate config file */
+if(process.env.NODE_ENV === 'production'){
+  CONFIG = require('./config-prod');
+} else{
+  CONFIG = require('./config-test');
+}
 
 /* Account operations */
 var open    = '01'; //• open accountname
