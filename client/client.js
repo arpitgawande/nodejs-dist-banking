@@ -6,6 +6,8 @@ prompt.colors = false;
 prompt.message = '';
 var net = require('net');
 var CONFIG = {};
+
+console.log('Current Env: ' + process.env.NODE_ENV);
 /* Load appropriate config file */
 if(process.env.NODE_ENV === 'production'){
   CONFIG = require('./config-prod');

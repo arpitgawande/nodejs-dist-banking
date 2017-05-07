@@ -1,6 +1,7 @@
 'use strict';
 var net = require('net');
 var shortid = require('shortid');
+console.log('Current Env: ' + process.env.NODE_ENV);
 /* Load server configurations */
 require('./init')();
 /* Get server network configuration */
@@ -95,7 +96,7 @@ db.once('open', function() {
               console.log('Remote call ---->');
               getRemoteConn(remoteSocket, serverId, function(){
                 remoteSocket.write(data);
-                remoteSocket.close();
+                remoteSocket.destroy();
               });                 
             }
             
