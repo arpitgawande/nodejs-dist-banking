@@ -21,7 +21,7 @@ CONFIG.SERVER2 = {
 };
 
 CONFIG.getServer = function(serverId){
-  console.log('serverId:'+serverId);
+  //console.log('serverId:'+serverId);
   var server = {};
   if(Number(serverId) === 0){
     server.SERVERID = CONFIG.SERVER0.SERVERID;
