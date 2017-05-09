@@ -1,7 +1,33 @@
+#Server Info
+
+Name					Zone			Internal IP		External IP
+--------------------	-----------		------------	------------ 
+banking-system-pqqk		us-east1-d		10.142.0.2		104.196.99.70
+
+banking-system-f1rh		us-east1-d		10.142.0.3		35.185.46.246
+
+banking-system-8xnv		us-east1-d		10.142.0.4		104.196.57.80
+
+banking-system-kb09		us-east1-d		10.142.0.5		104.196.6.191
+
+banking-system-r1bw		us-east1-d		10.142.0.6		35.185.29.3
+
+banking-system-32zj		us-east1-d		10.142.0.7		35.185.35.37
+ 
 #Prod Server Information
 
-ID 	NAME  IP
----	----- ----------
-0   pqqk  10.142.0.2
-1 	f1rh  10.142.0.3 	
-2 	8xnv  10.142.0.4 	
+ID 	NAME  				 IP
+---	-------------------  ----------
+0   banking-system-pqqk  10.142.0.2
+1 	banking-system-f1rh  10.142.0.3 	
+2 	banking-system-8xnv  10.142.0.4 	
+
+
+#Connect to google cloud from linux system ssh command
+
+gcloud beta compute ssh arpitgawande@banking-system-pqqk --zone us-east1-d
+gcloud beta compute ssh arpitgawande@banking-system-f1rh --zone us-east1-d
+gcloud beta compute ssh arpitgawande@banking-system-8xnv --zone us-east1-d
+gcloud beta compute ssh arpitgawande@banking-system-kb09 --zone us-east1-d
+gcloud beta compute ssh arpitgawande@banking-system-r1bw --zone us-east1-d
+gcloud beta compute ssh arpitgawande@banking-system-32zj --zone us-east1-d
